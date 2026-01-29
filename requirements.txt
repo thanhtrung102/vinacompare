@@ -14,6 +14,8 @@ bitsandbytes>=0.42.0
 
 # Vector Database
 pymilvus>=2.3.0
+marshmallow>=3.13.0
+environs>=9.5.0
 
 # Vietnamese NLP (optional - uncomment if needed for advanced tokenization)
 # underthesea==6.7.0  # Requires Rust toolchain, skip for basic setup
