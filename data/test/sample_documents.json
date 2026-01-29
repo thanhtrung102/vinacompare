@@ -1,0 +1,58 @@
+[
+  {
+    "id": "doc_001",
+    "title": "Python Basics cho người mới bắt đầu",
+    "text": "Python là ngôn ngữ lập trình bậc cao, dễ học và mạnh mẽ. Để bắt đầu với Python, bạn cần cài đặt Python từ python.org. Sau khi cài đặt, bạn có thể viết chương trình đầu tiên: print('Hello, World!'). Python hỗ trợ nhiều paradigm lập trình như lập trình hướng đối tượng, lập trình hàm và lập trình thủ tục.",
+    "category": "programming",
+    "source": "viblo.asia"
+  },
+  {
+    "id": "doc_002",
+    "title": "Machine Learning cơ bản",
+    "text": "Machine Learning là một nhánh của AI cho phép máy tính học từ dữ liệu. Có 3 loại chính: Supervised Learning (học có giám sát) dùng cho phân loại và hồi quy, Unsupervised Learning (học không giám sát) dùng cho clustering và giảm chiều, và Reinforcement Learning (học tăng cường) dùng cho các bài toán quyết định tuần tự.",
+    "category": "machine-learning",
+    "source": "machinelearningcoban.com"
+  },
+  {
+    "id": "doc_003",
+    "title": "Docker và containerization",
+    "text": "Docker là nền tảng containerization giúp đóng gói ứng dụng cùng dependencies. Để sử dụng Docker, cần tạo Dockerfile định nghĩa image, sau đó build với 'docker build -t myapp .' và run container với 'docker run myapp'. Docker giúp đảm bảo ứng dụng chạy nhất quán trên mọi môi trường.",
+    "category": "devops",
+    "source": "topdev.vn"
+  },
+  {
+    "id": "doc_004",
+    "title": "RESTful API với FastAPI",
+    "text": "FastAPI là framework Python hiện đại để xây dựng API. Nó hỗ trợ async/await, tự động tạo OpenAPI documentation, và validation với Pydantic. Ví dụ cơ bản: from fastapi import FastAPI; app = FastAPI(); @app.get('/') def read_root(): return {'Hello': 'World'}. FastAPI có hiệu năng cao nhờ sử dụng Starlette và Pydantic.",
+    "category": "programming",
+    "source": "viblo.asia"
+  },
+  {
+    "id": "doc_005",
+    "title": "Vector Database và RAG",
+    "text": "Vector Database như Milvus, Pinecone lưu trữ embeddings để tìm kiếm semantic. RAG (Retrieval Augmented Generation) kết hợp retrieval với LLM để trả lời câu hỏi chính xác hơn. Quy trình: encode query thành vector, tìm documents tương tự, đưa context vào LLM để sinh câu trả lời.",
+    "category": "ai",
+    "source": "towardsdatascience.com"
+  },
+  {
+    "id": "doc_006",
+    "title": "Git và Version Control",
+    "text": "Git là hệ thống quản lý phiên bản phân tán. Các lệnh cơ bản: git init khởi tạo repo, git add thêm files vào staging, git commit lưu thay đổi, git push đẩy lên remote. Branch cho phép làm việc song song: git checkout -b feature tạo branch mới, git merge gộp branches.",
+    "category": "devops",
+    "source": "git-scm.com"
+  },
+  {
+    "id": "doc_007",
+    "title": "Xử lý ngôn ngữ tự nhiên tiếng Việt",
+    "text": "NLP tiếng Việt có những thách thức riêng do đặc điểm ngôn ngữ. Underthesea là thư viện phổ biến hỗ trợ: word segmentation (tách từ), POS tagging (gán nhãn từ loại), NER (nhận dạng thực thể). PhoBERT là mô hình pre-trained cho tiếng Việt đạt kết quả tốt trên nhiều task.",
+    "category": "nlp",
+    "source": "github.com/undertheseanlp"
+  },
+  {
+    "id": "doc_008",
+    "title": "Kubernetes cơ bản",
+    "text": "Kubernetes (K8s) là nền tảng orchestration cho containers. Các khái niệm chính: Pod là đơn vị nhỏ nhất chứa containers, Deployment quản lý replicas, Service expose pods ra network, Ingress định tuyến HTTP. Kubectl là CLI tool để tương tác với cluster.",
+    "category": "devops",
+    "source": "kubernetes.io"
+  }
+]
