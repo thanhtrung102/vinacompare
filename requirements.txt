@@ -15,9 +15,9 @@ bitsandbytes>=0.42.0
 # Vector Database
 pymilvus>=2.3.0
 
-# Vietnamese NLP
-underthesea==6.7.0
-pyvi==0.1.1
+# Vietnamese NLP (optional - uncomment if needed for advanced tokenization)
+# underthesea==6.7.0  # Requires Rust toolchain, skip for basic setup
+# pyvi==0.1.1
 
 # Data Processing
 pandas>=2.2.0

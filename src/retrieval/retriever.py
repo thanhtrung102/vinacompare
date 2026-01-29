@@ -4,14 +4,26 @@ Hybrid retrieval system combining dense and sparse search
 from typing import List, Dict, Any, Optional
 from rank_bm25 import BM25Okapi
 import numpy as np
-from underthesea import word_tokenize
 import logging
+
+# Try to import underthesea, fallback to simple tokenization
+try:
+    from underthesea import word_tokenize
+    UNDERTHESEA_AVAILABLE = True
+except ImportError:
+    UNDERTHESEA_AVAILABLE = False
+    logger.warning("underthesea not available, using simple tokenization")
 
 from src.models.embeddings import get_embedder
 from src.vector_store import get_vector_store
 from src.config import settings
 
 logger = logging.getLogger(__name__)
+
+
+def simple_tokenize(text: str) -> str:
+    """Simple whitespace tokenizer as fallback"""
+    return text.lower()
 
 
 class Document:
@@ -121,7 +133,10 @@ class HybridRetriever:
             return []
 
         # Tokenize query
-        query_tokens = word_tokenize(query, format="text").split()
+        if UNDERTHESEA_AVAILABLE:
+            query_tokens = word_tokenize(query, format="text").split()
+        else:
+            query_tokens = simple_tokenize(query).split()
 
         # Get BM25 scores
         scores = self.bm25_index.get_scores(query_tokens)
@@ -216,10 +231,16 @@ class HybridRetriever:
         self.documents_cache = documents
 
         # Tokenize all documents
-        tokenized_docs = [
-            word_tokenize(doc["text"], format="text").split()
-            for doc in documents
-        ]
+        if UNDERTHESEA_AVAILABLE:
+            tokenized_docs = [
+                word_tokenize(doc["text"], format="text").split()
+                for doc in documents
+            ]
+        else:
+            tokenized_docs = [
+                simple_tokenize(doc["text"]).split()
+                for doc in documents
+            ]
 
         # Build BM25 index
         self.bm25_index = BM25Okapi(
